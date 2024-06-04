@@ -1,7 +1,7 @@
 /* Global styles */
 body {
     font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
+    font-size: 17px;
     color: #333333;
     background-color: #f4f4f4;
   }
@@ -110,7 +110,7 @@ body {
 
   /* About section styles */
   #about {
-    padding: 6rem 0;
+    padding: 5rem 0;
     background-color: #ffffff;
   }
 
@@ -123,9 +123,9 @@ body {
 
   #about p {
     color: #555555;
-    font-size: 1.125rem;
-    font-weight: 400;
-    line-height: 1.8;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.5;
   }
 
   #about img {
@@ -269,9 +269,49 @@ body {
 
 /* General image hover effect */
 .img-hover-effect {
+  position: relative;
   transition: transform 0.3s ease-in-out;
 }
 
 .img-hover-effect:hover {
   transform: scale(1.1);
+}
+
+.img-hover-effect::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: inherit;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.img-hover-effect:hover::before {
+  opacity: 1;
+}
+
+/* Change the background color of the arrow buttons */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  background-color: #6C61F6; /* Add your desired background color here */
+  width: 30px;
+  height: 30px;
+}
+
+/* Change the arrows color */
+.carousel-control-prev-icon::before, .carousel-control-next-icon::before {
+  color: #ffffff; /* Change this to your desired arrow color */
+}
+
+.carousel-item img {
+  max-width: 100%; /* Adjust the maximum width percentage value as needed */
+  max-height: 400px; /* Adjust the maximum height value as needed */
+  width: auto; /* Maintain aspect ratio */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensures the aspect ratio is maintained while covering the container */
 }
